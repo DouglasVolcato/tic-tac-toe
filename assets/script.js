@@ -334,7 +334,7 @@ function computer(){
                 document.querySelector(`#box2`).innerText = "O"
                 break
             } else if(document.querySelector(`#box1`).innerText == "" && document.querySelector(`#box2`).innerText == "X" && document.querySelector(`#box3`).innerText == "X"){
-                document.querySelector(`#box1`).innerText = "X"
+                document.querySelector(`#box1`).innerText = "O"
                 break
             }else if(document.querySelector(`#box4`).innerText == "X" && document.querySelector(`#box5`).innerText == "X" && document.querySelector(`#box6`).innerText == ""){
                 document.querySelector(`#box6`).innerText = "O"
