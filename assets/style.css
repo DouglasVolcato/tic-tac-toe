@@ -245,7 +245,7 @@ h2{
     #score{
         font-size: 4vw;
         display: none;
-        width: 40vw;
+        width: 80vw;
     }
 }
 
@@ -373,6 +373,6 @@ h2{
     #score{
         font-size: 7vw;
         display: none;
-        width: 40vw;
+        width: 80vw;
     }
 }
