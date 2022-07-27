@@ -54,13 +54,7 @@ function player(local){
 }
 function verifyFreeSpaces(){
     if (verifySpaces() == false){
-        document.getElementById("board").style.display = "none";
-        document.getElementById("choose").style.display = "flex";
-        document.getElementById("playerP").innerText = `${playerPoints}`;
-        document.getElementById("computerP").innerText = `${computerPoints}`;
-        for (let i = 1; i <= 9; i++){
-            document.querySelector(`#box${i}`).innerText = "";
-        }
+        reset(3);
         return true
     }
     return false
@@ -68,26 +62,34 @@ function verifyFreeSpaces(){
 function verifyVictory(){
     if (winner() == 1){
         playerPoints++
-        document.getElementById("board").style.display = "none";
-        document.getElementById("choose").style.display = "flex";
-        document.getElementById("playerP").innerText = `${playerPoints}`;
-        document.getElementById("computerP").innerText = `${computerPoints}`;
-        for (let i = 1; i <= 9; i++){
-            document.querySelector(`#box${i}`).innerText = "";
-        }
+        reset(1);
         return true
     } else if (winner() == 2){
         computerPoints++
-        document.getElementById("board").style.display = "none";
-        document.getElementById("choose").style.display = "flex";
-        document.getElementById("playerP").innerText = `${playerPoints}`;
-        document.getElementById("computerP").innerText = `${computerPoints}`;
-        for (let i = 1; i <= 9; i++){
-            document.querySelector(`#box${i}`).innerText = "";
-        }
+        reset(2);
         return true
     }
     return false
+}
+function final(){
+    for (let i = 1; i <= 9; i++){
+        document.querySelector(`#box${i}`).innerText = "";
+    }
+    document.getElementById("over").style.display = "none";
+    document.getElementById("board").style.display = "none";
+    document.getElementById("choose").style.display = "flex";
+}
+function reset(num){
+    document.getElementById("playerP").innerText = `${playerPoints}`;
+    document.getElementById("computerP").innerText = `${computerPoints}`;
+    document.getElementById("over").style.display = "flex";
+    if (num == 1){
+        document.querySelector("#over p").innerText = "You won!"
+    } else if (num == 2){
+        document.querySelector("#over p").innerText = "The Computer won!"
+    } else if (num == 3){
+        document.querySelector("#over p").innerText = "Draw!"
+    }
 }
 function computer(){
     while (true){
