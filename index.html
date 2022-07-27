@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>TicTacToe</title>
+</head>
+<body>
+    <h1>TicTacToe</h1>
+    <section id="game">
+        <div id="introduction">
+            <button onclick="start1()">START</button>
+        </div>
+        <div id="choose">
+            <h2>Choose your symbol</h2>
+            <main>
+                <div onclick="start2(1)">X</div>
+                <div onclick="start2(2)">O</div>
+            </main>
+        </div>
+        <div id="board">
+            <div id="box1" onclick="player(1)"></div>
+            <div id="box2" onclick="player(2)"></div>
+            <div id="box3" onclick="player(3)"></div>
+            <div id="box4" onclick="player(4)"></div>
+            <div id="box5" onclick="player(5)"></div>
+            <div id="box6" onclick="player(6)"></div>
+            <div id="box7" onclick="player(7)"></div>
+            <div id="box8" onclick="player(8)"></div>
+            <div id="box9" onclick="player(9)"></div>
+        </div>
+    </section>
+
+    <section id="score">
+        <p>Player: <a id="playerP">0</a></p>
+        <p>Computer: <a id="computerP">0</a></p>
+    </section>
+
+    <script src="./assets/script.js"></script>
+</body>
+</html>
